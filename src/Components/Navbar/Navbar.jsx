@@ -5,9 +5,12 @@ import search_icon from "../../assets/search_icon.svg";
 import bell_icon from "../../assets/bell_icon.svg";
 import profile_img from "../../assets/profile_img.png";
 import caret_icon from "../../assets/caret_icon.svg";
+import { useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 const Navbar = () => {
   const navRef = useRef();
+  const navigate = useNavigate();
 
   useEffect(() => {
     window.addEventListener("scroll", () => {
@@ -23,9 +26,13 @@ const Navbar = () => {
     <>
       <div ref={navRef} className="navbar">
         <div className="navbar-left">
-          <img src={logo} alt="" />
+          <Link to="/">
+            <img src={logo} alt="" onClick={() => navigate("/")} />
+          </Link>
           <ul>
-            <li>Home</li>
+            <Link to="/login">
+              <li>Home</li>
+            </Link>
             <li>TV Shows</li>
             <li>Movies</li>
             <li>New & Polpular</li>

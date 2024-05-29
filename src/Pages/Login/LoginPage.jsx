@@ -1,13 +1,20 @@
 import React, { useState } from "react";
 import "./LoginPage.css";
 import logo from "../../assets/logo.png";
+import { useNavigate } from "react-router-dom";
 
 const LoginPage = () => {
   const [signState, setSignState] = useState("Sign In");
+  const navigate = useNavigate();
 
   return (
     <div className="login">
-      <img src={logo} className="login-logo" alt="" />
+      <img
+        src={logo}
+        className="login-logo"
+        alt=""
+        onClick={() => navigate("/")}
+      />
       <div className="login-form">
         <h1>{signState}</h1>
         <form>

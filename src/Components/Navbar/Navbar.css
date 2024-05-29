@@ -28,6 +28,8 @@
 
 .navbar-left ul li{
     cursor: pointer;
+    text-decoration: none;
+    color: #FFF;
 }
 
 .navbar-right{
